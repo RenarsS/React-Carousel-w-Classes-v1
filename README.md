@@ -54,10 +54,9 @@ However, in this case image of dog and cat will be rendered on the same slide an
 
 ## How to use Carousel?
 
-It's easy to use. Just use it. Each child that has to be rendered on a slide should have slideItem class. To show multiple elements on the same slide, they have to be encapsulated
-in <div>. 
+It's easy to use. Just use it. Each child that has to be rendered on a slide should have slideItem class. To show multiple elements on the same slide, they have to be encapsulated in <div> . 
 
-The props of slidesDisplay dictates how many slides are shhown at the same time.
+The props of slidesDisplay dictates how many slides are shown at the same time.
 
 ```javascript
 class App extends React.Component {
