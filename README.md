@@ -1,11 +1,11 @@
 # React-Carousel-w-Classes-v1
 
->This React Carousel was made using classes and supports:
+This React Carousel was made using classes and supports:
 
->> All types of HTML content
->> Swipes
->> Going to selected slide
->> Multiple slides at the same time
+> - All types of HTML content
+> - Swipes
+> - Going to selected slide
+> - Multiple slides at the same time
 
 
 ## React Carousel component app setup:
