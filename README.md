@@ -32,17 +32,20 @@ npm start
 
 ## How does this carousel works?
 
-Carousel maps each child, it receives, on its own slide. For example, the code bellow will result in two slides with each element. 
+Carousel maps each child it receives on its own slide. For example, the code bellow will result in three slides with each element. 
 ```javascript
+
 <Carousel slidesDisplay={1}>
   <img src={"dog.jpeg"} className={"slideItem"} alt={"Dog"}/>
   <img src={"cat.png"} className={"slideItem"} alt={"Cat"}/>
   <img src={"bird.png"} className={"slideItem"} alt={"Bird"}/>
 </Carousel>
+
 ```
 
 However, in this case image of dog and cat will be rendered on the same slide and image of bird will have its own.
 ```javascript
+
 <Carousel slidesDisplay={1}>
   <div className={"slideItem"}>
     <img src={"dog.jpeg"} alt={"Dog"}/>
@@ -50,9 +53,10 @@ However, in this case image of dog and cat will be rendered on the same slide an
   <div>
   <img src={"bird.png"} className={"slideItem"} alt={"Bird"}/>
 </Carousel>
+
 ```
 
-## How to use Carousel?
+## How to use the Carousel?
 
 It's easy to use. Just use it. Each child that has to be rendered on a slide should have slideItem class. To show multiple elements on the same slide, they have to be encapsulated in divs. 
 
