@@ -1,4 +1,4 @@
-# React-Carousel-w-Classes-v1
+# React-Carousel-w-Classes-v2
 
 This React Carousel was made using classes and supports:
 
