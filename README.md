@@ -25,7 +25,7 @@ npm run webpack
 #### 3. Running
 
 ```
-npm start
+npm run start
 ```
 
 
