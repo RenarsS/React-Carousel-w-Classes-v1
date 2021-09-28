@@ -44,11 +44,13 @@ class Slider extends React.Component {
 
     handleUp = () =>{
         const { positSlide } = this.context;
+        const {children, slidesDisplay} = this.props;
+        const {position, width} = this.state;
 
         this.setState({press: false});
 
-        if((this.state.position) <= 0){
-            positSlide(Math.abs(Math.round(this.state.position/(this.state.width/this.props.slidesDisplay))));
+        if(position <= 0 && Math.abs(Math.round(position/(width/slidesDisplay))) < children.length){
+            positSlide(Math.abs(Math.round(position/(width/slidesDisplay))));
         }
 
     }
@@ -128,7 +130,7 @@ class Slider extends React.Component {
                  onTouchMove={this.handleMove}
                  onTouchEnd={this.handleUp}
             >
-                {children.map(child => <div className={css(style.slide)}>{child}</div>)}
+                {children.map(child => <div key={children.indexOf(child)} className={css(style.slide)}>{child}</div>)}
             </div>
         )
     }
