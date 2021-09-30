@@ -18,10 +18,7 @@ class Carousel extends React.Component{
                             {this.props.children}
                         </Slider>
                     </Screen>
-                    <div className={"indicate"}>
-                        <Indicator/>
-                    </div>
-
+                    <Indicator/>
                 </SlideProvider>
             </div>
         )
