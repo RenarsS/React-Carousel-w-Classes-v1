@@ -5,7 +5,7 @@ import SlideContext from "../context/SlideContext";
 class Slider extends React.Component {
     constructor(props){
         super(props);
-        this.state={ position: 0, enter: 0, press: false, base:0, width: 0 };
+        this.state={ position: 0, enter: 0, press: false, base:0, width: 0};
         this.handlePress = this.handlePress.bind(this);
         this.handleMove = this.handleMove.bind(this);
         this.handleUp = this.handleUp.bind(this);
@@ -55,17 +55,15 @@ class Slider extends React.Component {
 
     }
 
-
     componentDidMount() {
         const s = document.querySelector(".screen");
         this.setState({width: s.offsetWidth});
-
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
+    componentDidUpdate(prevProps, prevState) {
 
-        const { positCount, currentSlide } = this.context;
-        const { width, press } = this.state;
+        const { positCount } = this.context;
+        const { width} = this.state;
         const { children, slidesDisplay } = this.props;
 
         if(prevState.width !== width){
@@ -73,17 +71,7 @@ class Slider extends React.Component {
             positCount(children.length);
         }
 
-        if(prevState.press !== press){
-            let slider = document.getElementsByClassName("base");
-
-            slider[0].addEventListener("animationend", ()=> {
-                this.setState({position: -currentSlide*(width/this.props.slidesDisplay)})
-            }, true);
-        }
-
     }
-
-
 
     render(){
 
@@ -98,7 +86,6 @@ class Slider extends React.Component {
             'to': {
                 transform: 'translateX('+(-currentSlide*(width/slidesDisplay))+'px)'
             }
-
         };
 
         const style = StyleSheet.create({
@@ -129,6 +116,7 @@ class Slider extends React.Component {
                  onTouchStart={this.handlePress}
                  onTouchMove={this.handleMove}
                  onTouchEnd={this.handleUp}
+                 onAnimationEnd={() => {this.setState({position: -currentSlide*(width/this.props.slidesDisplay)})}}
             >
                 {children.map(child => <div key={children.indexOf(child)} className={css(style.slide)}>{child}</div>)}
             </div>
